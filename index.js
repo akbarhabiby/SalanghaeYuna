@@ -74,6 +74,6 @@ server.get('/', (req, res, next) => {
 server.listen(config.PORT, () => {
   // * Start the Tweet Bot
   bot.start();
-  console.log('Twitter BOT Started!');
+  console.log('Twitter BOT Started! and Server is listening at PORT ' + config.PORT);
 });
 
