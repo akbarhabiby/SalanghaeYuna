@@ -1,0 +1,20 @@
+{
+  "morning": [
+    "안녕하세요 유나! 당신이가는 곳마다 긍정을 계속 퍼뜨 리세요! @ITZYofficial #유나",
+    "안녕하세요 유나! 좋은 하루 되세요! @ITZYofficial #유나",
+    "Good Morning Yuna! Have a nice day! @ITZYofficial #유나",
+    "Good Morning Yuna! Have a beautiful day! @ITZYofficial #유나"
+  ],
+  "night": [
+    "Good night! @ITZYofficial #유나",
+    "Tidur @ITZYofficial #유나",
+    "Selamat tidur! @ITZYofficial #유나"
+  ],
+  "newYear": {
+    "greet": "Hi Yuna, Happy New Year",
+    "wish": "! May the New Year bless you with health, wealth, and happiness! ^_^ @ITZYofficial #유나"
+  },
+  "birthDay": {
+    "wish": "Yuna! Today is the birthday of the person who is spreading joy and positivity all around. May your birthday and your life be as wonderful as you are! ^_^ @ITZYofficial #유나"
+  }
+}
