@@ -1,3 +1,4 @@
+const server = require('restify').createServer();
 const cron = require('node-cron');
 const Twit = require('twit');
 const config = require('./config');
@@ -63,6 +64,16 @@ const bot = cron.schedule('* * * * *', () => {
   };
 });
 
-// * Start the Tweet Bot
-bot.start();
-console.log('Twitter BOT Started!');
+server.get('/', (req, res, next) => {
+  res.send({
+    message: 'Twitter BOT Started',
+    time: new Date()
+  });
+});
+
+server.listen(config.PORT, () => {
+  // * Start the Tweet Bot
+  bot.start();
+  console.log('Twitter BOT Started!');
+});
+
