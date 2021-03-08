@@ -69,7 +69,7 @@ const bot = cron.schedule('* * * * *', () => {
     botStatus = {
       ...botStatus,
       alive: true,
-      lastUpdated: new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })
+      lastAliveUpdated: new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })
     };
   };
 });
