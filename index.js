@@ -57,9 +57,9 @@ const bot = cron.schedule('* * * * *', () => {
     tweet
       .then(console.log)
       .catch(console.error)
-      .finally(() => isBotAlive = true);
       // * No need to clear status, because the status is already cleared when the cronjob start the task again.
   } else if (minutes === '00') {
+    isBotAlive = true;
     console.log({
       message: 'The BOT is Running, giving status for each hour',
       time: exactTime
