@@ -1,0 +1,14 @@
+{
+  "name": "twitter-api",
+  "version": "1.0.0",
+  "description": "Twitter API Bot",
+  "main": "index.js",
+  "repository": "git@github.com:akbarhabiby/twitter-api.git",
+  "author": "Muhammad Akbar Habiby Khalid <akbarhabiby@icloud.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-cron": "^2.0.3",
+    "twit": "^2.2.11"
+  }
+}
