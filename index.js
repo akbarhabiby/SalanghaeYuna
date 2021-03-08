@@ -3,6 +3,8 @@ const cron = require('node-cron');
 const Twit = require('twit');
 const config = require('./config');
 
+let isBotAlive = false
+
 const T = new Twit({
   consumer_key: config.CONSUMER_KEY,
   consumer_secret: config.CONSUMER_SECRET,
@@ -54,7 +56,8 @@ const bot = cron.schedule('* * * * *', () => {
     
     tweet
       .then(console.log)
-      .catch(console.error);
+      .catch(console.error)
+      .finally(() => isBotAlive = true);
       // * No need to clear status, because the status is already cleared when the cronjob start the task again.
   } else if (minutes === '00') {
     console.log({
@@ -66,8 +69,10 @@ const bot = cron.schedule('* * * * *', () => {
 
 server.get('/', (req, res, next) => {
   res.send({
-    message: 'Twitter BOT Started',
-    time: new Date()
+    isBotAlive,
+    time: new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }),
+    repository: 'https://github.com/akbarhabiby/SalanghaeYuna',
+    twitter: 'https://twitter.com/akbarhabiby'
   });
 });
 
