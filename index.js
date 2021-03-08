@@ -13,7 +13,7 @@ const bot = cron.schedule('* * * * *', () => {
   const { morning, night, newYear, birthDay } = config.GREETINGS
   const [ year, month, day, format, exactTime ] = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }).split(' ');
   const [ hour, minutes ] = exactTime.split(':');
-  const earlyDay = format === '오전' && hour === '0' && minutes === '0';
+  const earlyDay = format === '오전' && hour === '0' && minutes === '00';
   const yunaBirthDateAsClock = hour === '9' && minutes === '12'
 
   const isNewYear = month === '1.' && day === '1.' && earlyDay;
@@ -55,8 +55,14 @@ const bot = cron.schedule('* * * * *', () => {
       .then(console.log)
       .catch(console.error);
       // * No need to clear status, because the status is already cleared when the cronjob start the task again.
+  } else if (minutes === '00') {
+    console.log({
+      message: 'The BOT is Running, giving status for each hour',
+      time: exactTime
+    });
   };
 });
 
 // * Start the Tweet Bot
 bot.start();
+console.log('Twitter BOT Started!');
