@@ -15,7 +15,7 @@ const T = new Twit({
 });
 
 const bot = cron.schedule('* * * * *', () => {
-  const { morning, night, newYear, birthDay } = config.GREETINGS
+  const { morning, night, newYear, birthDay } = require('./greetings.json')
   const [ year, month, day, format, exactTime ] = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }).split(' ');
   const [ hour, minutes ] = exactTime.split(':');
   const earlyDay = format === '오전' && hour === '0' && minutes === '00';
