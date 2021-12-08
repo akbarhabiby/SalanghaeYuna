@@ -18,7 +18,7 @@ const bot = cron.schedule('* * * * *', () => {
   const { morning, night, newYear, birthDay } = require('./greetings.json')
   const [ year, month, day, format, exactTime ] = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }).split(' ');
   const [ hour, minutes ] = exactTime.split(':');
-  const earlyDay = format === '오전' && hour === '0' && minutes === '00';
+  const earlyDay = format === '오전' && hour === '12' && minutes === '00';
   const yunaBirthDateAsClock = hour === '9' && minutes === '12'
 
   const isNewYear = month === '1.' && day === '1.' && earlyDay;
